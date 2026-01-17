@@ -558,10 +558,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Update UI with User Info
                 const headerName = document.getElementById('headerUserName');
                 const headerSubtitle = document.getElementById('headerUserSubtitle');
+                const headerUserNameShort = document.getElementById('headerUserNameShort');
+                const userAvatarSmall = document.getElementById('userAvatarSmall');
                 const landingDesc = document.getElementById('landingDescription');
 
                 if (headerName) headerName.textContent = currentUser.name; // e.g. "Brayan"
                 if (headerSubtitle) headerSubtitle.textContent = currentUser.name + ' — ' + currentUser.subtitle;
+                if (headerUserNameShort) headerUserNameShort.textContent = currentUser.name; // FIX: Update short name
+                if (userAvatarSmall) userAvatarSmall.textContent = currentUser.name.charAt(0).toUpperCase(); // FIX: Update avatar initial
                 if (landingDesc) landingDesc.textContent = currentUser.description;
 
                 loginScreen.style.display = 'none';
