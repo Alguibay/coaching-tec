@@ -553,7 +553,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (USERS[password]) {
                 // AUTH SUCCESS
                 currentUser = USERS[password];
-                tasks = currentUser.tasks;
+
+                // Load tasks from localStorage or use default
+                const savedTasks = localStorage.getItem(`tasks_${currentUser.id}`);
+                if (savedTasks) {
+                    tasks = JSON.parse(savedTasks);
+                } else {
+                    tasks = JSON.parse(JSON.stringify(currentUser.tasks)); // Clone default tasks
+                }
 
                 // Update UI with User Info
                 const headerName = document.getElementById('headerUserName');
@@ -1276,6 +1283,13 @@ document.addEventListener('DOMContentLoaded', () => {
         modalOverlay.style.display = 'none';
     }
 
+    // Save tasks to localStorage
+    function saveTasksToLocalStorage() {
+        if (currentUser) {
+            localStorage.setItem(`tasks_${currentUser.id}`, JSON.stringify(tasks));
+        }
+    }
+
     function saveTask() {
         const index = parseInt(editIndex.value);
         const newTask = {
@@ -1305,6 +1319,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showToast('Tarea creada');
         }
 
+        saveTasksToLocalStorage(); // Save to localStorage
         closeModal();
         populateFilters(); // Re-populate filters in case new categories/people
         renderAll();
@@ -1315,6 +1330,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const index = parseInt(editIndex.value);
             if (index >= 0) {
                 tasks.splice(index, 1);
+                saveTasksToLocalStorage(); // Save to localStorage
                 showToast('Tarea eliminada');
                 closeModal();
                 renderAll();
