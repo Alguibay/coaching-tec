@@ -1,0 +1,1220 @@
+:root {
+    /* Base Colors - Dark Mode (Default) */
+    --primary: #4285F4;
+    --primary-hover: #3367D6;
+
+    --bg-body: #121212;
+    --bg-card: #1E1E1E;
+    --bg-card-hover: #2C2C2C;
+    --bg-header: rgba(30, 30, 30, 0.8);
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+
+    --text-main: #FFFFFF;
+    --text-muted: #AAAAAA;
+    --border: #333333;
+
+    --danger: #EA4335;
+    --success: #34A853;
+    --warning: #FBBC05;
+
+    --bg-landing: radial-gradient(circle at top right, #1a237e 0%, #121212 40%);
+
+    --font-inter: 'Inter', sans-serif;
+    --radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+    --bg-body: #F4F6F8;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F9FAFB;
+    --bg-header: rgba(255, 255, 255, 0.8);
+    --bg-overlay: rgba(255, 255, 255, 0.7);
+
+    --bg-landing: radial-gradient(circle at top right, #e8f0fe 0%, #ffffff 40%);
+
+    --text-main: #202124;
+    --text-muted: #5F6368;
+    --border: #E0E0E0;
+
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-inter);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+html {
+    background-color: var(--bg-body);
+}
+
+/* Status Classes for Cards */
+.status-card-completed {
+    border-left: 4px solid var(--success) !important;
+}
+
+.status-card-in-progress {
+    border-left: 4px solid var(--warning) !important;
+}
+
+.status-card-overdue {
+    border-left: 4px solid var(--danger) !important;
+}
+
+.status-card-pending {
+    border-left: 4px solid var(--text-muted) !important;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.status-completed {
+    background: rgba(52, 168, 83, 0.1);
+    color: var(--success);
+}
+
+.status-badge.status-in-progress {
+    background: rgba(251, 188, 5, 0.1);
+    color: var(--warning);
+}
+
+.status-badge.status-overdue {
+    background: rgba(234, 67, 53, 0.1);
+    color: var(--danger);
+}
+
+.status-badge.status-pending {
+    background: rgba(170, 170, 170, 0.1);
+    color: var(--text-muted);
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+/* --- UTILS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.btn:hover {
+    background: var(--border);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+    border: none;
+}
+
+.btn-icon {
+    padding: 0.6rem;
+}
+
+/* --- LOGIN SCREEN --- */
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    /* hidden by default, toggled via JS */
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-dark);
+    z-index: 1000;
+}
+
+.login-box {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+}
+
+.login-logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(66, 133, 244, 0.1);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.login-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+}
+
+.login-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.login-error {
+    color: var(--danger);
+    font-size: 0.9rem;
+    display: none;
+}
+
+.login-btn {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+/* --- LANDING SCREEN --- */
+.landing-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* default visible */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-landing);
+    z-index: 900;
+    padding: 2rem;
+    text-align: center;
+}
+
+.landing-hero {
+    max-width: 800px;
+}
+
+.landing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(66, 133, 244, 0.1);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.landing-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.landing-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.landing-title span {
+    background: linear-gradient(90deg, #4285F4, #34A853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landing-description {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.landing-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.landing-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.landing-feature svg {
+    color: var(--success);
+}
+
+.landing-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.landing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.landing-btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.4);
+}
+
+.landing-btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(66, 133, 244, 0.6);
+}
+
+.landing-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.landing-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.landing-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-muted);
+}
+
+.landing-tool-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.tool-icon-landing {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+}
+
+.tool-icon-landing:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.tool-icon-landing svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- MAIN APP --- */
+.app-container {
+    display: none;
+    /* hidden initially */
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    /* Force background */
+}
+
+.header {
+    background: var(--bg-header);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--success));
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.logo span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.unsaved-badge {
+    color: var(--warning);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    /* hidden */
+    transition: opacity 0.3s;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--success);
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Controls */
+.controls-bar {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* KPIs */
+.kpis-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.kpi-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* View Tabs */
+.view-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.view-tab {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+}
+
+.view-tab.active {
+    background: rgba(66, 133, 244, 0.1);
+    color: var(--primary);
+    border-color: rgba(66, 133, 244, 0.2);
+}
+
+/* Cards View */
+.cards-view {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.cards-view.active {
+    display: grid;
+}
+
+.task-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.task-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.task-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--border);
+}
+
+.task-card.status-Pendiente::before {
+    background: var(--text-muted);
+}
+
+.task-card.status-En-curso::before {
+    background: var(--primary);
+}
+
+.task-card.status-Completada::before {
+    background: var(--success);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-tool-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+/* Gantt & Calendar Placeholders */
+.gantt-view,
+.calendar-view {
+    display: none;
+    /* Logic handles display */
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    min-height: 400px;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.form-row,
+.form-row-3 {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-close {
+    background: transparent;
+    color: var(--text-muted);
+}
+
+.modal-close:hover {
+    color: var(--text-main);
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--success);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 3000;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- DYNAMIC GANTT CHART --- */
+.gantt-controls {
+    display: flex;
+    justify-content: space-between;
+    /* Changed to space-between for nav on left, view on right */
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.gantt-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gantt-nav-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gantt-nav-btn:hover {
+    border-color: var(--primary);
+    color: var(--text-light);
+}
+
+.gantt-current-date {
+    font-weight: 600;
+    color: var(--text-light);
+    min-width: 150px;
+    text-align: center;
+}
+
+.gantt-view-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.gantt-view-btn.active,
+.gantt-view-btn:hover {
+    background: var(--bg-card);
+    color: var(--text-light);
+    border-color: var(--primary);
+}
+
+.gantt-chart-wrapper {
+    overflow-x: auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    user-select: none;
+    /* Prevent text selection while dragging */
+}
+
+.gantt-header-row {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    /* position: sticky; removed sticky horizontal scroll issue usually requires wrapper handling */
+    /* top: 0; */
+    z-index: 10;
+    background: var(--bg-card);
+    min-width: max-content;
+    /* Ensure it grows */
+}
+
+.gantt-header-cell {
+    flex: 0 0 auto;
+    border-right: 1px solid var(--border);
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.gantt-body {
+    position: relative;
+    min-width: max-content;
+    /* Ensure it grows */
+}
+
+.gantt-row {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    min-height: 50px;
+    /* Changed to min-height */
+    height: auto;
+    /* Allow growth */
+    align-items: stretch;
+    /* Stretch to fill */
+}
+
+.gantt-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.gantt-sidebar-cell {
+    position: sticky;
+    left: 0;
+    width: 200px;
+    /* Width of labels column */
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    z-index: 5;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    /* Don't shrink */
+}
+
+.gantt-time-cell {
+    flex: 0 0 auto;
+    border-right: 1px solid var(--border);
+    /* height: 100%; removed to allow container ref */
+    box-sizing: border-box;
+    /* Width will be set via JS based on zoom/view */
+}
+
+/* Gantt Bars */
+.gantt-bar {
+    position: absolute;
+    height: 30px;
+    /* Slightly smaller to allow stacking spacing */
+    /* top: calculated via JS */
+    border-radius: 4px;
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: grab;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gantt-bar:hover {
+    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gantt-bar:active {
+    cursor: grabbing;
+    transform: scale(1.02);
+}
+
+.gantt-bar.status-Completada {
+    background: var(--success);
+    color: #fff;
+}
+
+.gantt-bar.status-En-curso {
+    background: var(--warning);
+    color: #000 !important;
+    /* Force black text for yellow bar */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gantt-bar.status-Pendiente {
+    background: var(--text-muted);
+    color: #fff;
+}
+
+.gantt-bar.status-Vencida {
+    background: var(--danger);
+    color: #fff;
+}
+
+/* Use a distinct color */
+
+/* Current Time Indicator */
+.gantt-now-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    z-index: 4;
+    pointer-events: none;
+}
+
+.gantt-now-line::after {
+    content: 'AHORA';
+    position: absolute;
+    top: 0;
+    left: 4px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .landing-title {
+        font-size: 2.5rem;
+    }
+
+    .form-row,
+    .form-row-3 {
+        flex-direction: column;
+    }
+}
+
+/* --- CALENDAR VIEW IMPROVEMENTS --- */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.calendar-day-header {
+    background: var(--bg-card);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.calendar-day {
+    background: var(--bg-card);
+    min-height: 120px;
+    padding: 0.5rem;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.calendar-day:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.calendar-day.empty {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.calendar-date-number {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: right;
+    color: var(--text-muted);
+}
+
+.calendar-day.today .calendar-date-number {
+    color: var(--primary);
+}
+
+.calendar-event {
+    background: rgba(66, 133, 244, 0.1);
+    border-left: 3px solid var(--primary);
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.2s;
+}
+
+.calendar-event:hover {
+    background: rgba(66, 133, 244, 0.2);
+    transform: scale(1.02);
+}
+
+.calendar-event.status-Completada {
+    border-color: var(--success);
+    background: rgba(52, 168, 83, 0.1);
+}
+
+.calendar-event.status-En-curso {
+    border-color: var(--warning);
+    background: rgba(251, 188, 5, 0.1);
+}
+
+/* --- GANTT VIEW IMPROVEMENTS --- */
+.gantt-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gantt-group {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.gantt-group-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gantt-timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--border);
+}
+
+.gantt-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.gantt-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: var(--bg-card);
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.gantt-item.status-Completada::before {
+    border-color: var(--success);
+    background: var(--success);
+}
+
+.gantt-item.status-En-curso::before {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.gantt-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gantt-card:hover {
+    transform: translateX(5px);
+    border-color: var(--primary);
+}
+
+.gantt-time {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    min-width: 100px;
+}
+
+.gantt-details {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.gantt-tool {
+    font-weight: 600;
+    display: block;
+}
+
+.gantt-why {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

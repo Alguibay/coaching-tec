@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Desarrollo — Rafael</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/mobile.css?v=1">
+</head>
+
+<body>
+    <!-- LOGIN SCREEN -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <div class="login-logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+            </div>
+            <h2 class="login-title">Bienvenido</h2>
+            <p class="login-subtitle">Ingresa tu contraseña para acceder al programa</p>
+            <form class="login-form" id="loginForm">
+                <input type="password" class="login-input" id="loginPassword" placeholder="Contraseña"
+                    autocomplete="off">
+                <p class="login-error" id="loginError">Contraseña incorrecta. Intenta nuevamente.</p>
+                <button type="submit" class="login-btn">
+                    <span>Ingresar</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="vertical-align: middle; margin-left: 8px;">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LANDING SCREEN -->
+    <div class="landing-screen" id="landingScreen">
+        <div class="landing-hero">
+            <div class="landing-badge">
+                <span class="landing-badge-dot"></span>
+                Programa personalizado
+            </div>
+            <h1 class="landing-title">
+                Domina las <span>herramientas digitales</span> del futuro
+            </h1>
+            <p class="landing-description" id="landingDescription">
+                Un programa diseñado especialmente para ti. Aprenderás a usar el ecosistema de Google,
+                Notion, e Inteligencia Artificial para potenciar tu productividad y organización personal.
+            </p>
+            <div class="landing-features">
+                <div class="landing-feature">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <span>8 días de formación</span>
+                </div>
+                <div class="landing-feature">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span>+15 horas de contenido</span>
+                </div>
+                <div class="landing-feature">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <span>Sesiones en vivo + práctica</span>
+                </div>
+                <div class="landing-feature">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                    <span>Soporte por WhatsApp</span>
+                </div>
+            </div>
+            <div class="landing-cta">
+                <button class="landing-btn landing-btn-primary" id="startProgram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Comenzar programa
+                </button>
+                <a href="https://wa.me/56949111755" target="_blank" class="landing-btn landing-btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Contactar por WhatsApp
+                </a>
+            </div>
+            <div class="landing-tools">
+                <span class="landing-tools-title">Herramientas que aprenderás a dominar:</span>
+                <div class="landing-tool-icons">
+                    <!-- Notion -->
+                    <div class="tool-icon-landing" title="Notion">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path
+                                d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.98-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.886l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.886.747-.933z" />
+                        </svg>
+                    </div>
+                    <!-- Google App Script -->
+                    <div class="tool-icon-landing" title="Google App Script">
+                        <svg viewBox="0 0 24 24" fill="#4285F4">
+                            <path d="M22 6l-10-4-10 4v12l10 4 10-4z" opacity="0.2" />
+                            <path d="M12 2l-9.5 4.5v11L12 22l9.5-4.5v-11z" fill="none" stroke="#4285F4"
+                                stroke-width="2" />
+                            <path d="M14.5 10l-5 5m5 0l-5-5" stroke="#4285F4" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <!-- Google Gemini -->
+                    <div class="tool-icon-landing" title="Google Gemini">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C12 2 12.5 9 19 12C12.5 15 12 22 12 22C12 22 11.5 15 5 12C11.5 9 12 2 12 2Z"
+                                fill="url(#gemini-gradient)" />
+                            <defs>
+                                <linearGradient id="gemini-gradient" x1="5" y1="2" x2="19" y2="22"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4E8BF5" />
+                                    <stop offset="1" stop-color="#DB4437" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <!-- Notebook LLM -->
+                    <div class="tool-icon-landing" title="Notebook LLM">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#FBBC05" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                        </svg>
+                    </div>
+                    <!-- ChatGPT -->
+                    <div class="tool-icon-landing" title="ChatGPT">
+                        <svg viewBox="0 0 24 24" fill="#10A37F">
+                            <path
+                                d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a1.54 1.54 0 0 1 .8312 1.32v5.6418a4.4992 4.4992 0 0 1-5.2877 3.1673zm6.241-3.2725-.1656-.0927-4.7551-2.7424v-.0023l-.0303-.0176v-5.523a4.4992 4.4992 0 0 1 2.9806 1.8383 1.5416 1.5416 0 0 1 1.9702 3.3768zM4.68 14.8493a4.1915 4.1915 0 0 1 .134-2.986 1.5416 1.5416 0 0 1 2.2238-2.18l4.8913 2.8256-.0023 5.518-.1355.0784-.0161.0094-1.92 1.114a4.4992 4.4992 0 0 1-5.1751-4.3802zm9.743-11.232a4.4992 4.4992 0 0 1 2.969 4.3013l-4.6381 2.6738-.002-.5603v-4.6865l-4.7513-2.7471.1637-.0951a4.4992 4.4992 0 0 1 6.2587 1.1139z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <span class="landing-tools-title" style="margin-top: 2rem;">Usando para tu plan de desarrollo:</span>
+                <div class="landing-tool-icons">
+                    <!-- Google Meet -->
+                    <div class="tool-icon-landing" title="Google Meet">
+                        <svg viewBox="0 0 24 24" fill="#00897b">
+                            <path
+                                d="M12 0C6.186 0 1.322 4.09.19 9.525h4.25c.989-2.57 3.456-4.4 6.373-4.4 2.917 0 5.384 1.83 6.373 4.4h4.25C20.305 4.09 15.814 0 12 0zm8.623 10.65H15v2.7h5.623c.246-.87.377-1.77.377-2.7 0-.93-.13-1.83-.377-2.7H15v2.7h5.623zM12 24c5.814 0 10.678-4.09 11.81-9.525h-4.25c-.989 2.57-3.456 4.4-6.373 4.4-2.917 0-5.384-1.83-6.373-4.4H.19C1.322 19.91 6.186 24 12 24z" />
+                            <path d="M16 12l5-3v6z" />
+                        </svg>
+                    </div>
+                    <!-- Gmail -->
+                    <div class="tool-icon-landing" title="Gmail">
+                        <svg viewBox="0 0 24 24" fill="#ea4335">
+                            <path
+                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+                        </svg>
+                    </div>
+                    <!-- YouTube -->
+                    <div class="tool-icon-landing" title="YouTube">
+                        <svg viewBox="0 0 24 24" fill="#ff0000">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div class="app-container" id="appContainer">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 id="headerUserName">Plan de Desarrollo</h1>
+                        <span id="headerUserSubtitle">Rafael — Ecosistema Google + Notion + IA</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle-btn" id="themeToggleBtn" title="Cambiar Tema"
+                        style="background:transparent; border:1px solid var(--border); width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:8px; color:var(--text-main); margin-right:10px;">
+                        <!-- Sun Icon (for Dark Mode) -->
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path
+                                d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                            </path>
+                        </svg>
+                        <!-- Moon Icon (for Light Mode, hidden by default via CSS/JS logic) -->
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" style="display:none;">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="btn btn-icon" id="btnSettings" title="Configuración">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path>
+                            <path d="M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="user-profile-header" id="userProfileHeader"
+                        style="display:flex; align-items:center; gap:0.5rem; margin-left:1rem;">
+                        <div class="user-avatar-small" id="userAvatarSmall"
+                            style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg, var(--primary), var(--success)); display:flex; align-items:center; justify-content:center; color:white; font-weight:600; font-size:0.9rem;">
+                            R</div>
+                        <span id="headerUserNameShort" style="font-weight:500;">Rafael</span>
+                    </div>
+                    <span class="unsaved-badge" id="unsavedBadge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        Sin guardar
+                    </span>
+                    <a href="https://wa.me/56949111755" target="_blank" class="whatsapp-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <button class="btn" id="btnAddTask">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Nueva tarea
+                    </button>
+                    <button class="btn btn-success" id="btnSave">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+                            <polyline points="17,21 17,13 7,13 7,21" />
+                            <polyline points="7,3 7,8 15,8" />
+                        </svg>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Controls -->
+            <div class="controls-bar">
+                <div class="form-group">
+                    <label>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        Búsqueda
+                    </label>
+                    <input type="text" id="searchInput" placeholder="Buscar por herramienta, tema, contenido...">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                        </svg>
+                        Herramienta
+                    </label>
+                    <select id="filterTool"></select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                        </svg>
+                        ¿Con quién?
+                    </label>
+                    <select id="filterWith"></select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Estado
+                    </label>
+                    <select id="filterStatus">
+                        <option value="(Todos)">(Todos)</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En curso">En curso</option>
+                        <option value="Completada">Completada</option>
+                    </select>
+                </div>
+                <button class="btn btn-icon" id="btnReset" title="Limpiar filtros">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8" />
+                        <path d="M3 3v5h5" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- KPIs -->
+            <div class="kpis-row" id="kpisContainer"></div>
+
+            <!-- View Tabs -->
+            <div class="view-tabs">
+                <button class="view-tab active" data-view="cards">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+                    Tarjetas
+                </button>
+                <button class="view-tab" data-view="gantt">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="15" y2="12" />
+                        <line x1="3" y1="18" x2="18" y2="18" />
+                    </svg>
+                    Gantt
+                </button>
+                <button class="view-tab" data-view="calendar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    Calendario
+                </button>
+            </div>
+            <!-- Views -->
+            <div class="cards-view active" id="cardsView"></div>
+            <div class="gantt-view" id="ganttView"></div>
+            <div class="calendar-view" id="calendarView"></div>
+        </main>
+    </div>
+
+    <!-- Gantt Popup -->
+    <div class="gantt-popup" id="ganttPopup">
+        <div class="gantt-popup-header">
+            <div>
+                <div class="card-title-row">
+                    <span class="tool-icon" id="popupToolIcon"></span>
+                    <h4 id="popupTitle"></h4>
+                </div>
+                <p class="card-subtitle" id="popupSubtitle"></p>
+            </div>
+            <button class="gantt-popup-close" id="closeGanttPopup">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div class="gantt-popup-body">
+            <div class="card-meta-row" id="popupMeta"></div>
+            <div class="tags-row" id="popupTags"></div>
+            <div class="card-body" id="popupBody"></div>
+        </div>
+        <div class="gantt-popup-footer">
+            <button class="btn" id="popupEditBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                </svg>
+                Editar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Editar tarea</h3>
+                <button class="modal-close" id="modalClose">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="editIndex">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Herramienta / Título</label>
+                        <input type="text" id="editTool" placeholder="Ej: Notion, GTD, AppScript...">
+                    </div>
+                    <div class="form-group">
+                        <label>Grupo / Etapa</label>
+                        <input type="text" id="editGroup" placeholder="Ej: Kick off, Práctica, IA...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>¿Por qué? (Objetivo)</label>
+                    <input type="text" id="editWhy" placeholder="Propósito de la actividad">
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" id="editDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Duración</label>
+                        <input type="text" id="editDuration" placeholder="Ej: 0:45">
+                    </div>
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <select id="editStatus">
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En curso">En curso</option>
+                            <option value="Completada">Completada</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Hora inicio</label>
+                        <input type="time" id="editHStart">
+                    </div>
+                    <div class="form-group">
+                        <label>Hora fin</label>
+                        <input type="time" id="editHEnd">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Cómo (herramienta/método)</label>
+                        <input type="text" id="editHow" placeholder="Ej: Google meet, Youtube...">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Con quién?</label>
+                        <input type="text" id="editWith" placeholder="Ej: Autónomo, Tobías...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Descripción / Ayuda</label>
+                    <textarea id="editHelp" placeholder="Describe la actividad, instrucciones, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Videos (URLs separadas por coma)</label>
+                    <textarea id="editVideos" placeholder="https://youtube.com/..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Dato personal</label>
+                        <input type="text" id="editFact" placeholder="Ej: Fanático del Atleti">
+                    </div>
+                    <div class="form-group">
+                        <label>Variable perfil</label>
+                        <input type="text" id="editProfile" placeholder="Ej: Pasión, Hobby">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="btnDeleteTask" style="margin-right: auto; color: var(--danger);">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6" />
+                        <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                    </svg>
+                    Eliminar
+                </button>
+                <button class="btn" id="btnCancelEdit">Cancelar</button>
+                <button class="btn btn-primary" id="btnSaveEdit">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Guardar cambios
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12" />
+        </svg>
+        <span id="toastMsg">Cambios guardados</span>
+    </div>
+
+    <!-- WELCOME POPUP (First Visit) -->
+    <div class="modal-overlay" id="welcomeModal" style="display:none;">
+        <div class="modal" style="max-width:600px; text-align:center;">
+            <div class="modal-body" style="padding:3rem 2rem;">
+                <div
+                    style="width:80px; height:80px; margin:0 auto 1.5rem; background:linear-gradient(135deg, var(--primary), var(--success)); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <h2
+                    style="font-size:2rem; margin-bottom:1rem; background:linear-gradient(90deg, var(--primary), var(--success)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+                    ¡Bienvenido, <span id="welcomeUserName">Estudiante</span>!
+                </h2>
+                <p style="font-size:1.1rem; color:var(--text-main); margin-bottom:1.5rem; line-height:1.8;">
+                    Gracias por <strong>confiar en mí</strong> para encarar este proceso de aprendizaje express.
+                </p>
+                <p style="font-size:1rem; color:var(--text-muted); margin-bottom:2rem; line-height:1.7;">
+                    Juntos exploraremos el <strong style="color:var(--primary);">apasionante mundo de las nuevas
+                        tecnologías</strong>,
+                    desde herramientas de productividad hasta inteligencia artificial.
+                    Este viaje transformará tu forma de trabajar y aprender.
+                </p>
+                <div
+                    style="background:rgba(66, 133, 244, 0.1); padding:1.5rem; border-radius:12px; margin-bottom:2rem; border-left:4px solid var(--primary);">
+                    <p style="font-size:0.95rem; color:var(--text-main); margin:0;">
+                        💡 <strong>Consejo:</strong> Explora las vistas de <strong>Tarjetas</strong>,
+                        <strong>Gantt</strong> y <strong>Calendario</strong>
+                        para organizar tu aprendizaje. No olvides configurar tu perfil en ⚙️ Configuración.
+                    </p>
+                </div>
+                <button class="btn btn-primary" id="btnCloseWelcome" style="padding:1rem 2rem; font-size:1.1rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    ¡Comencemos!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFILE SETTINGS MODAL -->
+    <div class="modal-overlay" id="profileModal" style="display:none;">
+        <div class="modal" style="max-width:800px;">
+            <div class="modal-header">
+                <h3>Configuración de Perfil</h3>
+                <button class="modal-close" id="profileModalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height:70vh; overflow-y:auto;">
+                <!-- Photo Upload Section -->
+                <div style="text-align:center; margin-bottom:2rem;">
+                    <div class="profile-avatar-large" id="profileAvatarPreview"
+                        style="width:120px; height:120px; border-radius:50%; margin:0 auto 1rem; background:linear-gradient(135deg, var(--primary), var(--success)); display:flex; align-items:center; justify-content:center; color:white; font-size:3rem; font-weight:700; overflow:hidden; position:relative;">
+                        <span id="avatarInitial">R</span>
+                        <img id="avatarImage"
+                            style="display:none; width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+                    </div>
+                    <input type="file" id="profilePictureInput" accept="image/*" style="display:none;">
+                    <button class="btn" onclick="document.getElementById('profilePictureInput').click()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z">
+                            </path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                        Cambiar foto
+                    </button>
+                </div>
+
+                <!-- Basic Info -->
+                <h4 style="margin-bottom:1rem; color:var(--primary);">Información Básica</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre completo</label>
+                        <input type="text" id="profileFullName" placeholder="Ej: Rafael García">
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre de usuario</label>
+                        <input type="text" id="profileUsername" placeholder="Ej: Rafael">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Edad</label>
+                        <input type="number" id="profileAge" placeholder="25">
+                    </div>
+                    <div class="form-group">
+                        <label>Nueva contraseña (opcional)</label>
+                        <input type="password" id="profilePassword" placeholder="Dejar vacío para mantener">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Bio / Descripción</label>
+                    <textarea id="profileBio" rows="2" placeholder="Cuéntanos sobre ti..."></textarea>
+                </div>
+
+                <!-- Interests -->
+                <h4 style="margin:2rem 0 1rem; color:var(--primary);">Intereses y Pasiones</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pasión principal</label>
+                        <input type="text" id="profilePassion" placeholder="Ej: Atletico de Madrid">
+                    </div>
+                    <div class="form-group">
+                        <label>Hobby favorito</label>
+                        <input type="text" id="profileHobby" placeholder="Ej: GYM, Cocina">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Objetivo de aprendizaje</label>
+                    <input type="text" id="profileGoal" placeholder="¿Qué quieres lograr?">
+                </div>
+
+                <!-- Skills -->
+                <h4 style="margin:2rem 0 1rem; color:var(--primary);">Herramientas que dominas</h4>
+                <div id="skillsContainer"
+                    style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:1rem;">
+                    <!-- Skills will be dynamically populated -->
+                </div>
+
+                <!-- Contact -->
+                <h4 style="margin:2rem 0 1rem; color:var(--primary);">Contacto</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="profileEmail" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp</label>
+                        <input type="tel" id="profileWhatsapp" placeholder="+56 9 1234 5678">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="btnCancelProfile">Cancelar</button>
+                <button class="btn btn-primary" id="btnSaveProfile">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Guardar perfil
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=3"></script>
+</body>
+
+</html>
+</div>
+</div>
+</body>
+
+</html>
