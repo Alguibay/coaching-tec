@@ -1553,9 +1553,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeWelcomeModal() {
-        if (currentUser) {
+        // Check if user wants to hide the welcome message permanently
+        const dontShowAgain = document.getElementById('dontShowWelcomeAgain');
+
+        if (currentUser && dontShowAgain && dontShowAgain.checked) {
+            // Only save preference if checkbox is checked
             localStorage.setItem(`welcomed_${currentUser.id}`, 'true');
         }
+
         welcomeModal.style.display = 'none';
+
+        // Reset checkbox for next time
+        if (dontShowAgain) {
+            dontShowAgain.checked = false;
+        }
     }
 });
